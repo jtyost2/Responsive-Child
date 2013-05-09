@@ -82,8 +82,8 @@ class ResponsiveChildThemeCustomDisplay {
 			?>
 			<meta name="description" content="<?php echo $post->post_excerpt; ?>" />
 			<meta name="revised" content="<?php echo $post->post_modified_gmt; ?>" />
-			<meta name="author" content="<?php echo get_author_complete_name($post->post_author); ?>" />
-			<meta name="keywords" content="<?php echo get_post_tags($post->ID); ?>" />
+			<meta name="author" content="<?php echo self::get_author_complete_name($post->post_author); ?>" />
+			<meta name="keywords" content="<?php echo self::get_post_tags($post->ID); ?>" />
 			<meta property="og:title" content="<?php echo $post->post_title; ?>" />
 			<meta property="og:url" content="<?php echo get_permalink($post->ID); ?>" />
 			<?php
