@@ -32,7 +32,7 @@ get_header(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php responsive_entry_top(); ?>
 
-                <?php get_template_part( 'post-meta' ); ?>
+                <?php get_template_part( 'quick-link-meta' ); ?>
 
                 <div class="post-entry">
                     <?php the_content(__('Read more &#8250;', 'responsive')); ?>
@@ -55,7 +55,7 @@ get_header(); ?>
                     <div class="next"><?php next_post_link( '%link &#8250;' ); ?></div>
 		        </div><!-- end of .navigation -->
 
-                <?php //get_template_part( 'post-data' ); ?>
+                <?php get_template_part( 'post-data' ); ?>
 
 				<?php responsive_entry_bottom(); ?>
 			</div><!-- end of #post-<?php the_ID(); ?> -->
