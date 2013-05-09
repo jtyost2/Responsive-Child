@@ -59,6 +59,7 @@ class ResponsiveChildThemeCustomOptions {
 			<?php endif; ?>
 
 			<form method="post" action="options.php">
+				<input type="hidden" name="responsive_child_noncename" id="responsive_child_noncename" value="<?php echo wp_create_nonce( plugin_basename(__FILE__) ); ?>" />
 				<?php settings_fields( RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_FIELD ); ?>
 				<?php $options = get_option( RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS ); ?>
 				<h2><?php _e( 'Social Media Settings', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></h2>
@@ -155,7 +156,6 @@ class ResponsiveChildThemeCustomOptions {
 	}
 
 	public function theme_options_validate( $input = array()) {
-		var_dump($input);
 
 		//Sanitize Input Text
 		if(is_array($input) && array_key_exists('bitly_username', $input)){
