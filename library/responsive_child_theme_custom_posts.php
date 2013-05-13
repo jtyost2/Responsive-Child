@@ -37,8 +37,13 @@ class ResponsiveChildThemeCustomPosts {
 					'title',
 					'editor',
 					'trackbacks',
+					'revisions',
 				),
 				'register_meta_box_cb' => array($this, 'add_quick_links_metabox'),
+				'taxonomies' => array(
+					'category',
+					'post_tag'
+				),
 			)
 		);
 
