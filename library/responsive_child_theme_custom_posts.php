@@ -52,7 +52,8 @@ class ResponsiveChildThemeCustomPosts {
 		add_action('save_post', array($this, 'save_quick_links_metaboxes'), 1, 2); // save the custom fields
 
 		//Add Filters
-		add_filter('the_permalink_rss', array(&$this, 'quick_link_permalink_rss'));
+		add_filter('the_permalink_rss', array($this, 'quick_link_permalink_rss'));
+		add_filter( 'pre_get_posts', array($this, 'get_all_post_types') );
 	}
 
 	public function quick_link_permalink_rss($content) {
@@ -79,6 +80,13 @@ class ResponsiveChildThemeCustomPosts {
 		<input type="hidden" name="quick_links_noncename" id="quick_links_noncename" value="<?php echo wp_create_nonce( plugin_basename(__FILE__) ); ?>" />
 		<input type="text" name="_link" value="<?php echo get_post_meta($post->ID, '_link', true); ?>" class="widefat" />
 		<?php
+	}
+
+	function get_all_post_types( $query ) {
+		if ( is_home() ) {
+			$query->set( 'post_type', array( 'post', 'link_post') );
+		}
+		return $query;
 	}
 
 	public function save_quick_links_metaboxes($post_id, $post) {
