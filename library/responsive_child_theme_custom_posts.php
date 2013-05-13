@@ -45,6 +45,23 @@ class ResponsiveChildThemeCustomPosts {
 		//Add Action
 		add_action('add_meta_boxes', array($this, 'add_quick_links_metabox'));
 		add_action('save_post', array($this, 'save_quick_links_metaboxes'), 1, 2); // save the custom fields
+
+		//Add Filters
+		add_filter('the_permalink_rss', array(&$this, 'quick_link_permalink_rss'));
+	}
+
+	public function quick_link_permalink_rss($content) {
+		$postId = self::_return_post_id();
+		$link = get_post_meta($postId, '_link', true);
+		$content = null;
+		if(is_feed()) {
+			if($link !== '') {
+				$content = $link;
+			} else {
+				$content = get_permalink($postId);
+			}
+		}
+		return $content;
 	}
 
 	public function add_quick_links_metabox() {
@@ -92,6 +109,12 @@ class ResponsiveChildThemeCustomPosts {
 			}
 			if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
 		}
+	}
+
+	protected function _return_post_id() {
+		global $wp_query;
+		$postId = $wp_query->post->ID;
+		return $postId;
 	}
 
 	protected function _get_theme_options() {
