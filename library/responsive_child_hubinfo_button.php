@@ -40,7 +40,7 @@ class ResponsiveChildHubinfoButton {
 	public function hubinfo($atts) {
 		extract( shortcode_atts( array(
 			'user' => 'jtyost2',
-			'repo' => 'Erudite-Child-Theme',
+			'repo' => 'Responsive-Child',
 			'twitter' => 'jtyost2',
 		), $atts ) );
 
