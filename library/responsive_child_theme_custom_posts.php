@@ -82,11 +82,16 @@ class ResponsiveChildThemeCustomPosts {
 	}
 
 	public function save_quick_links_metaboxes($post_id, $post) {
-		if ( "link_post" != $_POST['post_type'] ) {
+		if (
+			array_key_exists('post_type', $_POST)
+			&& "link_post" != $_POST['post_type']
+		) {
         return;
     }
 
-		if ( !wp_verify_nonce( $_REQUEST['quick_links_noncename'], plugin_basename(__FILE__) )) {
+		if ( array_key_exists('quick_links_noncename', $_REQUEST)
+			&& !wp_verify_nonce( $_REQUEST['quick_links_noncename'], plugin_basename(__FILE__) )
+		) {
 			return $post->ID;
 		}
 
