@@ -54,6 +54,7 @@ class ResponsiveChildThemeCustomPosts {
 		//Add Filters
 		add_filter('the_permalink_rss', array($this, 'quick_link_permalink_rss'));
 		add_filter( 'pre_get_posts', array($this, 'get_all_post_types') );
+		add_filter( 'request', array($this, 'get_feed_post_types' ) );
 	}
 
 	public function quick_link_permalink_rss($content) {
@@ -82,9 +83,16 @@ class ResponsiveChildThemeCustomPosts {
 		<?php
 	}
 
-	function get_all_post_types( $query ) {
+	public function get_all_post_types( $query ) {
 		if ( is_home() ) {
 			$query->set( 'post_type', array( 'post', 'link_post') );
+		}
+		return $query;
+	}
+
+	public function get_feed_post_types( $query ) {
+		if (isset($query['feed']) && !isset($query['post_type'])) {
+			$query['post_type'] = array( 'post', 'link_post');
 		}
 		return $query;
 	}
