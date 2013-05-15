@@ -52,9 +52,19 @@ class ResponsiveChildThemeCustomPosts {
 		add_action('save_post', array($this, 'save_quick_links_metaboxes'), 1, 2); // save the custom fields
 
 		//Add Filters
-		add_filter('the_permalink_rss', array($this, 'quick_link_permalink_rss'));
+		add_filter( 'the_permalink_rss', array($this, 'quick_link_permalink_rss'));
+		add_filter( 'the_content_feed', array($this, 'add_url_to_quick_link_post'));
 		add_filter( 'pre_get_posts', array($this, 'get_all_post_types') );
 		add_filter( 'request', array($this, 'get_feed_post_types' ) );
+	}
+
+	public function add_url_to_quick_link_post($content) {
+		$postId = self::_return_post_id();
+		$link = get_post_meta($postId, '_link', true);
+		if(is_feed()) {
+			$content = $content."<p><a href='".get_permalink($postId)."' title='Permalink to this Post'>&#8734; Permalink</a></p>";
+		}
+		return $content;
 	}
 
 	public function quick_link_permalink_rss($content) {
