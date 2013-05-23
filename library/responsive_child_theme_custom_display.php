@@ -34,7 +34,8 @@ class ResponsiveChildThemeCustomDisplay {
 		remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );
 
 		//Add Actions
-		add_action('publish_post', 'add_on_publish');
+		add_action('publish_post', array($this, 'add_on_publish'));
+		add_action('publish_link_post', array($this, 'add_on_publish'));
 
 		//Register Scripts
 		wp_register_script(
@@ -210,7 +211,7 @@ class ResponsiveChildThemeCustomDisplay {
 
 		$shortURL = null;
 		if( self::is_bitly_information_set() ) {
-			$shortURL = get_bitly_url($longURL, $this->ThemeOptions['bitly_username'], $this->ThemeOptions['bitly_api_key']);
+			$shortURL = self::get_bitly_url($longURL, $this->ThemeOptions['bitly_username'], $this->ThemeOptions['bitly_api_key']);
 		} else {
 			$shortURL = $longURL;
 		}
