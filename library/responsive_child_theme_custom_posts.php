@@ -36,7 +36,6 @@ class ResponsiveChildThemeCustomPosts {
 				'supports' => array(
 					'title',
 					'editor',
-					'trackbacks',
 					'revisions',
 					'custom-fields'
 				),
