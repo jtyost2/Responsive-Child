@@ -341,7 +341,8 @@ class ResponsiveChildThemeCustomDisplay {
 	 */
 	public function add_favicons(){
 		?>
-		<link href="<?php echo home_url(); ?>/favicon.ico" rel="shortcut icon" />
+		<link rel="shortcut icon" href="<?php echo home_url(); ?>/favicon.ico" />
+		<link type="image/x-icon" rel="icon" href="<?php echo home_url(); ?>/favicon.ico" />
 		<?php if(self::get_iphone_non_retina_icon()): ?>
 			<link rel="apple-touch-icon" sizes="57x57" href="<?php echo home_url(); ?>/apple-touch-icon-57x57-precomposed.png" />
 		<?php endif; ?>
