@@ -100,6 +100,7 @@ class ResponsiveChildThemeCustomDisplay {
 		?>
 		<meta property="og:site_name" content="<?php echo get_option('blogname'); ?>" />
 		<meta property="og:type" content="blog" />
+		<?php echo self::get_meta_tags(); ?>
 		<?php
 	}
 
@@ -143,7 +144,7 @@ class ResponsiveChildThemeCustomDisplay {
 	 * @param mixed $author_ID (default: null)
 	 * @return void
 	 */
-	function get_author_complete_name($author_ID = null){
+	public function get_author_complete_name($author_ID = null){
 		$author_info = get_userdata($author_ID);
 		$author_name = $author_info->display_name;
 		return $author_name;
@@ -155,7 +156,7 @@ class ResponsiveChildThemeCustomDisplay {
 	 * @access public
 	 * @return void
 	 */
-	function get_iphone_non_retina_icon() {
+	public function get_iphone_non_retina_icon() {
 		return $this->ThemeOptions['apple_touch_icon_iphone_non_retina'];
 	}
 
@@ -165,8 +166,21 @@ class ResponsiveChildThemeCustomDisplay {
 	 * @access public
 	 * @return void
 	 */
-	function get_iphone_retina_icon() {
+	public function get_iphone_retina_icon() {
 		return $this->ThemeOptions['apple_touch_icon_iphone_retina'];
+	}
+
+	/**
+	 * get_meta_tags - return the additional_meta_tags from the ThemeOptions if set
+	 *
+	 * @return [type] [description]
+	 */
+	public function get_meta_tags() {
+		if(array_key_exists('additional_meta_tags', $this->ThemeOptions)) {
+			return $this->ThemeOptions['additional_meta_tags'];
+		} else {
+			return NULL;
+		}
 	}
 
 	/**

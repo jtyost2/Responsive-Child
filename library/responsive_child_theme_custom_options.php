@@ -118,6 +118,13 @@ class ResponsiveChildThemeCustomOptions {
 							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_retina]"><?php _e( 'Turn on the Apple Touch icon (Should be 144x144 pixels, in the webroot directory and named apple-touch-icon-144x144-precomposed.png). Sized for the iPad Retina Screen.', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
 						</td>
 					</tr>
+					<tr valign="top"><th scope="row"><?php _e( 'Additional Meta Tags', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
+						<td>
+							<textarea id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[additional_meta_tags]" class="large-text" rows="5" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[additional_meta_tags]"><?php if(isset($options['additional_meta_tags'])): echo $options['additional_meta_tags']; endif; ?></textarea>
+							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[additional_meta_tags]"><?php _e( 'Enter in additional meta tags desired to be included on every page.', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
+						</td>
+						</td>
+					</tr>
 				</table>
 
 				<h2><?php _e( 'Reading/Writing Settings', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></h2>
@@ -154,6 +161,12 @@ class ResponsiveChildThemeCustomOptions {
 		<?php
 	}
 
+	/**
+	 * theme_options_validate - validates input array
+	 *
+	 * @param  array  $input input array of values from the admin page options
+	 * @return [type]        [description]
+	 */
 	public function theme_options_validate( $input = array()) {
 
 		//Sanitize Input Text
@@ -168,6 +181,9 @@ class ResponsiveChildThemeCustomOptions {
 		}
 		if(is_array($input) && array_key_exists('open_id_delegate', $input)){
 			$input['open_id_delegate'] = wp_filter_nohtml_kses( $input['open_id_delegate'] );
+		}
+		if(is_array($input) && array_key_exists('additional_meta_tags', $input)){
+			$input['additional_meta_tags'] = $input['additional_meta_tags'];
 		}
 
 		if ( ! isset( $input['censored_bar'] ) ) {
