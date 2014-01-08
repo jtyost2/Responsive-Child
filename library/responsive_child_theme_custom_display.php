@@ -61,8 +61,10 @@ class ResponsiveChildThemeCustomDisplay {
 			&& ($this->ThemeOptions['open_id_delegate'] != '')
 		):
 			?>
+			<!--
 			<link rel="openid2.provider" href="<?php echo $this->ThemeOptions['open_id_server']; ?>" />
 			<link rel="openid2.local_id" href="<?php echo $this->ThemeOptions['open_id_delegate']; ?>" />
+			-->
 			<link rel="openid.server" href="<?php echo $this->ThemeOptions['open_id_server']; ?>" />
 			<link rel="openid.delegate" href="<?php echo $this->ThemeOptions['open_id_delegate']; ?>" />
 			<?php
