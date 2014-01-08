@@ -77,13 +77,13 @@ class ResponsiveChildThemeCustomOptions {
 						</td>
 					</tr>
 
-					<tr valign="top"><th scope="row"><?php _e( 'Open ID Server URL', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
+					<tr valign="top"><th scope="row"><?php _e( 'Open ID Server URL and Provider', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
 						<td>
 							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[open_id_server]" class="regular-text" type="text" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[open_id_server]" value="<?php esc_attr_e( $options['open_id_server'] ); ?>" />
 							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[open_id_server]"><?php _e( 'Enter in your OpenID Server URL, to use your site\'s url as a delegate server. For example if using MyOpenId, enter in http://www.myopenid.com/server/. More info here: <a href="http://openid.net/specs/openid-authentication-1_1.html#delegating_authentication" target="_blank" title="OpenID Delegate Server">http://openid.net/specs/openid-authentication-1_1.html#delegating_authentication</a>', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
 						</td>
 					</tr>
-					<tr valign="top"><th scope="row"><?php _e( 'OpenID Delegate URL', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
+					<tr valign="top"><th scope="row"><?php _e( 'OpenID Delegate URL and Local ID)', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
 						<td>
 							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[open_id_delegate]" class="regular-text" type="text" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[open_id_delegate]" value="<?php esc_attr_e( $options['open_id_delegate'] ); ?>" />
 							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[open_id_delegate]"><?php _e( 'Enter in your OpenID Delegate Url, to use your site\'s url as a delegate server. For example if using MyOpenId, enter in http://{username}.myopenid.com/. More info here: <a href="http://openid.net/specs/openid-authentication-1_1.html#delegating_authentication" target="_blank" title="OpenID Delegate Server">http://openid.net/specs/openid-authentication-1_1.html#delegating_authentication</a>', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
