@@ -19,7 +19,8 @@ class ResponsiveChildThemeCustomPosts {
 	}
 
 	/**
-	 * [init description]
+	 * initialize the custom post types
+	 *
 	 * @return [type] [description]
 	 */
 	public function init() {
@@ -37,7 +38,9 @@ class ResponsiveChildThemeCustomPosts {
 					'title',
 					'editor',
 					'revisions',
-					'custom-fields'
+					'custom-fields',
+					'publicize',
+					'wpcom-markdown',
 				),
 				'register_meta_box_cb' => array($this, 'add_quick_links_metabox'),
 				'taxonomies' => array(
