@@ -100,22 +100,46 @@ class ResponsiveChildThemeCustomOptions {
 							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_iphone_non_retina]"><?php _e( 'Turn on the Apple Touch icon (Should be 57x57 pixels, in the webroot directory and named apple-touch-icon-57x57-precomposed.png). Sized for the iPhone Non-Retina Screen.', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
 						</td>
 					</tr>
+					<tr valign="top"><th scope="row"><?php _e( 'Apple Touch Icon - 72x72', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
+						<td>
+							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_mini_non_retina_ios_6]" class="regular-checkbox" type="checkbox" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_mini_non_retina_ios_6]" value="1" <?php if($options['apple_touch_icon_ipad_mini_non_retina_ios_7'] == TRUE): ?> checked <?php endif; ?> />
+							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_mini_non_retina_ios_6]"><?php _e( 'Turn on the Apple Touch icon (Should be 72x72 pixels, in the webroot directory and named apple-touch-icon-72x72-precomposed.png). For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
+						</td>
+					</tr>
+					<tr valign="top"><th scope="row"><?php _e( 'Apple Touch Icon - 76x76', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
+						<td>
+							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_mini_non_retina_ios_7]" class="regular-checkbox" type="checkbox" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_mini_non_retina_ios_7]" value="1" <?php if($options['apple_touch_icon_ipad_mini_non_retina_ios_7'] == TRUE): ?> checked <?php endif; ?> />
+							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_mini_non_retina_ios_7]"><?php _e( 'Turn on the Apple Touch icon (Should be 76x76 pixels, in the webroot directory and named apple-touch-icon-76x76-precomposed.png). Sized For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7.', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
+						</td>
+					</tr>
 					<tr valign="top"><th scope="row"><?php _e( 'Apple Touch Icon - 114x114', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
 						<td>
 							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_iphone_retina]" class="regular-checkbox" type="checkbox" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_iphone_retina]" value="1" <?php if($options['apple_touch_icon_iphone_retina'] == TRUE): ?> checked <?php endif; ?> />
 							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_iphone_retina]"><?php _e( 'Turn on the Apple Touch icon (Should be 114x114 pixels, in the webroot directory and named apple-touch-icon-114x114-precomposed.png). Sized for the iPhone Retina Screen.', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
 						</td>
 					</tr>
-					<tr valign="top"><th scope="row"><?php _e( 'Apple Touch Icon - 72x72', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
-						<td>
-							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_non_retina]" class="regular-checkbox" type="checkbox" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_non_retina]" value="1" <?php if($options['apple_touch_icon_ipad_non_retina'] == TRUE): ?> checked <?php endif; ?> />
-							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_non_retina]"><?php _e( 'Turn on the Apple Touch icon (Should be 72x72 pixels, in the webroot directory and named apple-touch-icon-72x72-precomposed.png). Sized for the iPad Non-Retina Screen.', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
-						</td>
-					</tr>
 					<tr valign="top"><th scope="row"><?php _e( 'Apple Touch Icon - 144x144', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
 						<td>
 							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_retina]" class="regular-checkbox" type="checkbox" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_retina]" value="1" <?php if($options['apple_touch_icon_ipad_retina'] == TRUE): ?> checked <?php endif; ?> />
-							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_retina]"><?php _e( 'Turn on the Apple Touch icon (Should be 144x144 pixels, in the webroot directory and named apple-touch-icon-144x144-precomposed.png). Sized for the iPad Retina Screen.', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
+							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_retina]"><?php _e( 'Turn on the Apple Touch icon (Should be 144x144 pixels, in the webroot directory and named apple-touch-icon-144x144-precomposed.png). For iPad with @2× display running iOS ≤ 6', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
+						</td>
+					</tr>
+					<tr valign="top"><th scope="row"><?php _e( 'Apple Touch Icon - 152x152', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
+						<td>
+							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_retina_ios7]" class="regular-checkbox" type="checkbox" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_retina_ios7]" value="1" <?php if($options['apple_touch_icon_ipad_retina_ios7'] == TRUE): ?> checked <?php endif; ?> />
+							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_retina_ios7]"><?php _e( 'Turn on the Apple Touch icon (Should be 152x152 pixels, in the webroot directory and named apple-touch-icon-152x152-precomposed.png). For iPad with @2× display running iOS ≥ 7', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
+						</td>
+					</tr>
+					<tr valign="top"><th scope="row"><?php _e( 'Apple Touch Icon - 180x180', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
+						<td>
+							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_iphone_plus_3x_screen]" class="regular-checkbox" type="checkbox" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_iphone_plus_3x_screen]" value="1" <?php if($options['apple_touch_icon_iphone_plus_3x_screen'] == TRUE): ?> checked <?php endif; ?> />
+							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_iphone_plus_3x_screen]"><?php _e( 'Turn on the Apple Touch icon (Should be 144x144 pixels, in the webroot directory and named apple-touch-icon-180x180-precomposed.png). For iPhone 6 Plus with @3× display', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
+						</td>
+					</tr>
+					<tr valign="top"><th scope="row"><?php _e( 'Chrome on Android - 192x192', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
+						<td>
+							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[chrome_on_android]" class="regular-checkbox" type="checkbox" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[chrome_on_android]" value="1" <?php if($options['chrome_on_android'] == TRUE): ?> checked <?php endif; ?> />
+							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[chrome_on_android]"><?php _e( 'Turn on the Chrome on Android icon (Should be 192x192 pixels, in the webroot directory and named touch-icon-192x192.png). Sized for Chrome Browsers in Android.', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
 						</td>
 					</tr>
 					<tr valign="top"><th scope="row"><?php _e( 'Additional Meta Tags', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
@@ -211,15 +235,35 @@ class ResponsiveChildThemeCustomOptions {
 		}
 		$input['apple_touch_icon_iphone_retina'] = ( $input['apple_touch_icon_iphone_retina'] == 1 ? 1 : 0 );
 
-		if ( ! isset( $input['apple_touch_icon_ipad_non_retina'] ) ) {
-			$input['apple_touch_icon_ipad_non_retina'] = null;
+		if ( ! isset( $input['apple_touch_icon_ipad_mini_non_retina_ios_6'] ) ) {
+			$input['apple_touch_icon_ipad_mini_non_retina_ios_6'] = null;
 		}
-		$input['apple_touch_icon_ipad_non_retina'] = ( $input['apple_touch_icon_ipad_non_retina'] == 1 ? 1 : 0 );
+		$input['apple_touch_icon_ipad_mini_non_retina_ios_6'] = ( $input['apple_touch_icon_ipad_mini_non_retina_ios_6'] == 1 ? 1 : 0 );
+
+		if ( ! isset( $input['apple_touch_icon_ipad_mini_non_retina_ios_7'] ) ) {
+			$input['apple_touch_icon_ipad_mini_non_retina_ios_7'] = null;
+		}
+		$input['apple_touch_icon_ipad_mini_non_retina_ios_7'] = ( $input['apple_touch_icon_ipad_mini_non_retina_ios_7'] == 1 ? 1 : 0 );
 
 		if ( ! isset( $input['apple_touch_icon_ipad_retina'] ) ) {
 			$input['apple_touch_icon_ipad_retina'] = null;
 		}
 		$input['apple_touch_icon_ipad_retina'] = ( $input['apple_touch_icon_ipad_retina'] == 1 ? 1 : 0 );
+
+		if ( ! isset( $input['apple_touch_icon_ipad_retina_ios7'] ) ) {
+			$input['apple_touch_icon_ipad_retina_ios7'] = null;
+		}
+		$input['apple_touch_icon_ipad_retina_ios7'] = ( $input['apple_touch_icon_ipad_retina_ios7'] == 1 ? 1 : 0 );
+
+		if ( ! isset( $input['apple_touch_icon_iphone_plus_3x_screen'] ) ) {
+			$input['apple_touch_icon_iphone_plus_3x_screen'] = null;
+		}
+		$input['apple_touch_icon_iphone_plus_3x_screen'] = ( $input['apple_touch_icon_iphone_plus_3x_screen'] == 1 ? 1 : 0 );
+
+		if ( ! isset( $input['chrome_on_android'] ) ) {
+			$input['chrome_on_android'] = null;
+		}
+		$input['chrome_on_android'] = ( $input['chrome_on_android'] == 1 ? 1 : 0 );
 
 		/*
 		// Our checkbox value is either 0 or 1
