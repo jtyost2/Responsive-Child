@@ -189,7 +189,7 @@ class ResponsiveChildThemeCustomDisplay {
 	 * get_ipad_non_retina_icon function.
 	 *
 	 * @access public
-	 * @return void
+	 * @return boolean
 	 */
 	function get_ipad_non_retina_icon() {
 		return $this->ThemeOptions['apple_touch_icon_ipad_non_retina'];
@@ -199,10 +199,20 @@ class ResponsiveChildThemeCustomDisplay {
 	 * get_ipad_retina_icon function.
 	 *
 	 * @access public
-	 * @return void
+	 * @return boolean
 	 */
 	public function get_ipad_retina_icon() {
 		return $this->ThemeOptions['apple_touch_icon_ipad_retina'];
+	}
+
+
+	/**
+	 * get the chrome on android icon
+	 *
+	 * @return boolean
+	 */
+	public function get_chrome_on_android_icon() {
+		return $this->ThemeOptions['chrome_on_android'];
 	}
 
 	/**
@@ -360,16 +370,19 @@ class ResponsiveChildThemeCustomDisplay {
 		<link rel="shortcut icon" href="<?php echo home_url(); ?>/favicon.ico" />
 		<link type="image/x-icon" rel="icon" href="<?php echo home_url(); ?>/favicon.ico" />
 		<?php if(self::get_iphone_non_retina_icon()): ?>
-			<link rel="apple-touch-icon" sizes="57x57" href="<?php echo home_url(); ?>/apple-touch-icon-57x57-precomposed.png" />
+			<link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo home_url(); ?>/apple-touch-icon-57x57-precomposed.png" />
 		<?php endif; ?>
 		<?php if(self::get_iphone_retina_icon()): ?>
-			<link rel="apple-touch-icon" sizes="72x72" href="<?php echo home_url(); ?>/apple-touch-icon-72x72-precomposed.png" />
+			<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo home_url(); ?>/apple-touch-icon-72x72-precomposed.png" />
 		<?php endif; ?>
 		<?php if(self::get_ipad_non_retina_icon()): ?>
-			<link rel="apple-touch-icon" sizes="114x114" href="<?php echo home_url(); ?>/apple-touch-icon-114x114-precomposed.png" />
+			<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo home_url(); ?>/apple-touch-icon-114x114-precomposed.png" />
 		<?php endif; ?>
 		<?php if(self::get_ipad_retina_icon()): ?>
-			<link rel="apple-touch-icon" sizes="144x144" href="<?php echo home_url(); ?>/apple-touch-icon-144x144-precomposed.png" />
+			<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url(); ?>/apple-touch-icon-144x144-precomposed.png" />
+		<?php endif; ?>
+		<?php if(self::get_chrome_on_android_icon()): ?>
+			<link rel="icon" sizes="192x192" href="<?php echo home_url(); ?>/touch-icon-192x192.png">
 		<?php endif; ?>
 		<?php
 	}
