@@ -186,23 +186,17 @@ class ResponsiveChildThemeCustomDisplay {
 	}
 
 	/**
-	 * get_ipad_non_retina_icon function.
-	 *
-	 * @access public
-	 * @return boolean
-	 */
-	function get_ipad_non_retina_icon() {
-		return $this->ThemeOptions['apple_touch_icon_ipad_non_retina'];
-	}
-
-	/**
 	 * get_ipad_retina_icon function.
 	 *
 	 * @access public
 	 * @return boolean
 	 */
-	public function get_ipad_retina_icon() {
-		return $this->ThemeOptions['apple_touch_icon_ipad_retina'];
+	public function get_icon($iconValue) {
+		if(array_key_exists($iconValue, $this->ThemeOptions)) {
+			return $this->ThemeOptions[$iconValue];
+		} else {
+			return false;
+		}
 	}
 
 
@@ -369,19 +363,28 @@ class ResponsiveChildThemeCustomDisplay {
 		?>
 		<link rel="shortcut icon" href="<?php echo home_url(); ?>/favicon.ico" />
 		<link type="image/x-icon" rel="icon" href="<?php echo home_url(); ?>/favicon.ico" />
-		<?php if(self::get_iphone_non_retina_icon()): ?>
+		<?php if(self::get_icon("apple_touch_icon_iphone_non_retina")): ?>
 			<link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo home_url(); ?>/apple-touch-icon-57x57-precomposed.png" />
 		<?php endif; ?>
-		<?php if(self::get_iphone_retina_icon()): ?>
+		<?php if(self::get_icon("apple_touch_icon_ipad_mini_non_retina_ios_6")): ?>
 			<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo home_url(); ?>/apple-touch-icon-72x72-precomposed.png" />
 		<?php endif; ?>
-		<?php if(self::get_ipad_non_retina_icon()): ?>
+		<?php if(self::get_icon("apple_touch_icon_ipad_mini_non_retina_ios_7")): ?>
+			<link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo home_url(); ?>/apple-touch-icon-76x76-precomposed.png">
+		<?php endif; ?>
+		<?php if(self::get_icon("apple_touch_icon_iphone_retina")): ?>
 			<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo home_url(); ?>/apple-touch-icon-114x114-precomposed.png" />
 		<?php endif; ?>
-		<?php if(self::get_ipad_retina_icon()): ?>
+		<?php if(self::get_icon("apple_touch_icon_ipad_retina")): ?>
 			<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url(); ?>/apple-touch-icon-144x144-precomposed.png" />
 		<?php endif; ?>
-		<?php if(self::get_chrome_on_android_icon()): ?>
+		<?php if(self::get_icon("apple_touch_icon_ipad_retina_ios7")): ?>
+			<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo home_url(); ?>/apple-touch-icon-152x152-precomposed.png" />
+		<?php endif; ?>
+		<?php if(self::get_icon("apple_touch_icon_iphone_plus_3x_screen")): ?>
+			<link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php echo home_url(); ?>/apple-touch-icon-180x180-precomposed.png" />
+		<?php endif; ?>
+		<?php if(self::get_icon("chrome_on_android")): ?>
 			<link rel="icon" sizes="192x192" href="<?php echo home_url(); ?>/touch-icon-192x192.png">
 		<?php endif; ?>
 		<?php
