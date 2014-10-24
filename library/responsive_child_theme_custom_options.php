@@ -118,6 +118,12 @@ class ResponsiveChildThemeCustomOptions {
 							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_ipad_retina]"><?php _e( 'Turn on the Apple Touch icon (Should be 144x144 pixels, in the webroot directory and named apple-touch-icon-144x144-precomposed.png). Sized for the iPad Retina Screen.', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
 						</td>
 					</tr>
+					<tr valign="top"><th scope="row"><?php _e( 'Chrome on Android - 192x192', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
+						<td>
+							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[chrome_on_android]" class="regular-checkbox" type="checkbox" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[chrome_on_android]" value="1" <?php if($options['chrome_on_android'] == TRUE): ?> checked <?php endif; ?> />
+							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[chrome_on_android]"><?php _e( 'Turn on the Chrome on Android icon (Should be 192x192 pixels, in the webroot directory and named touch-icon-192x192.png). Sized for Chrome Browsers in Android.', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
+						</td>
+					</tr>
 					<tr valign="top"><th scope="row"><?php _e( 'Additional Meta Tags', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
 						<td>
 							<textarea id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[additional_meta_tags]" class="large-text" rows="5" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[additional_meta_tags]"><?php if(isset($options['additional_meta_tags'])): echo $options['additional_meta_tags']; endif; ?></textarea>
@@ -220,6 +226,11 @@ class ResponsiveChildThemeCustomOptions {
 			$input['apple_touch_icon_ipad_retina'] = null;
 		}
 		$input['apple_touch_icon_ipad_retina'] = ( $input['apple_touch_icon_ipad_retina'] == 1 ? 1 : 0 );
+
+		if ( ! isset( $input['chrome_on_android'] ) ) {
+			$input['chrome_on_android'] = null;
+		}
+		$input['chrome_on_android'] = ( $input['chrome_on_android'] == 1 ? 1 : 0 );
 
 		/*
 		// Our checkbox value is either 0 or 1
