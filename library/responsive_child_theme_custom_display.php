@@ -73,6 +73,24 @@ class ResponsiveChildThemeCustomDisplay {
 	}
 
 	/**
+	 * adds open search information
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function add_open_search_information() {
+		if(
+			isset($this->ThemeOptions['open_search'])
+			&& !is_null($this->ThemeOptions['open_search'])
+		):
+			?>
+			<link rel="search" type="application/opensearchdescription+xml" href="<?php echo $this->ThemeOptions['open_search']; ?>" title="<?php echo get_bloginfo("name"); ?>">
+			<?php
+		else:
+		endif;
+	}
+
+	/**
 	 * add_meta_tags function.
 	 *
 	 * @access public
@@ -431,6 +449,7 @@ class ResponsiveChildThemeCustomDisplay {
 	 */
 	public function add_to_head(){
 		self::add_my_open_id_information();
+		self::add_open_search_information();
 		self::insert_short_url();
 		self::add_favicons();
 		self::add_meta_tags();

@@ -94,6 +94,11 @@ class ResponsiveChildThemeCustomOptions {
 
 				<h2><?php _e( 'Meta Settings', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></h2>
 				<table class="form-table">
+					<tr valign="top"><th scope="row"><?php _e( 'Open Search Local URL', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
+						<td>
+							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[open_search]" class="regular-text" type="text" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[open_search]" value="<?php esc_attr_e( $options['open_search'] ); ?>" />
+							<label class="description" for="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[open_search]"><?php _e( 'Enter in the url for your Open Search XML file. More info here: <a href="http://www.opensearch.org/Home" target="_blank" title="Open Search Home Page">http://www.opensearch.org/Home</a>', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></label>
+						</td>
 					<tr valign="top"><th scope="row"><?php _e( 'Apple Touch Icon - 57x57', RESPONSIVE_CHILD_TEMPLATE_THEME_LANG_FILE ); ?></th>
 						<td>
 							<input id="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_iphone_non_retina]" class="regular-checkbox" type="checkbox" name="<?php echo RESPONSIVE_CHILD_TEMPLATE_THEME_SETTINGS_OPTIONS; ?>[apple_touch_icon_iphone_non_retina]" value="1" <?php if($options['apple_touch_icon_iphone_non_retina'] == TRUE): ?> checked <?php endif; ?> />
@@ -275,6 +280,11 @@ class ResponsiveChildThemeCustomOptions {
 			$input['generic_apple_touch_icon'] = null;
 		}
 		$input['generic_apple_touch_icon'] = ( $input['generic_apple_touch_icon'] == 1 ? 1 : 0 );
+
+		if ( ! isset( $input['open_search'] ) ) {
+			$input['open_search'] = null;
+		}
+		$input['open_search'] = wp_filter_post_kses( $input['open_search'] );
 
 		/*
 		// Our checkbox value is either 0 or 1
