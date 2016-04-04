@@ -292,7 +292,7 @@ class ResponsiveChildThemeCustomDisplay {
 	function get_bitly_url($longURL, $login, $apikey){
 
 		// This is the API call to fetch the shortened URL
-		$apiurl = 'http://api.bit.ly/v3/shorten?longUrl='.urlencode($longURL).'&login='.$login.'&apiKey='.$apikey.'&format=json';
+		$apiurl = "https://api-ssl.bitly.com/v3/shorten?login={$login}&apiKey={$apiKey}&longUrl=" . urlencode($longURL) . "&format=json";
 
 		// Use cURL to return from the API
 		$curl = curl_init();
